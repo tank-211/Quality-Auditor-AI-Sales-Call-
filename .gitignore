@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+.env/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Excel reports (IMPORTANT - your app generates these)
+reports/
+*.xlsx
+
+# Transcripts (sensitive data)
+transcripts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build files
+dist/
+build/

@@ -205,8 +205,13 @@ def process_file(path):
     filename = os.path.basename(path)
     agent_id = os.path.basename(os.path.dirname(path))
 
-    call_date, call_no = parse_filename(filename)
-    transcript = open(path, encoding="utf-8").read().strip()
+    try:
+        call_date, call_no = parse_filename(filename)
+    except ValueError:
+        print(f"❌ Invalid filename: {filename}")
+        return
+    with open(path, encoding="utf-8") as f:
+        transcript = f.read().strip()
 
     try:
         result = analyze_call(transcript)
